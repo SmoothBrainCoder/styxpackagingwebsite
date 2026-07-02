@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Styx Packaging℠: Packaging worth keeping.</title>
+<meta name="description" content="Premium custom paper bags for small businesses. Foil stamping, soft-touch lamination, debossing, supplier-grade finishes at quantities that work for your brand." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+
+/* ─── Variables ───────────────────────────────────────────── */
+:root {
+  --bone:    #F4F1EA;
+  --bone-2:  #EDE8DC;
+  --ink:     #141311;
+  --ink-mid: #1E1C19;
+  --muted:   #6A6257;
+  --gold:    #A8884E;
+  --gold-s:  #C4A870;
+  --serif:   "Cormorant Garamond", Georgia, serif;
+  --sans:    "Inter", system-ui, sans-serif;
+  --ease:    cubic-bezier(.22,1,.36,1);
+  --ease-in: cubic-bezier(.55,0,1,.45);
+  --w:       1240px;
+  --ph:      clamp(24px, 5.5vw, 72px);
+  --nav-h:   76px;
+}
+
+/* ─── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  background: var(--ink); color: var(--bone);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: var(--gold); color: var(--ink); }
+a { text-decoration: none; color: inherit; }
+img, svg { display: block; max-width: 100%; }
+button { font-family: inherit; }
+
+/* ─── Layout ──────────────────────────────────────────────── */
+.wrap { max-width: var(--w); margin: 0 auto; padding: 0 var(--ph); }
+
+/* ─── Eyebrow ─────────────────────────────────────────────── */
+.ey {
+  display: inline-flex; align-items: center; gap: 14px;
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: .28em; text-transform: uppercase;
+}
+.ey::before {
+  content: ""; flex: none;
+  width: 28px; height: 1px; opacity: .5;
+}
+/* dark-bg default */
+.ey { color: var(--gold-s); }
+.ey::before { background: var(--gold-s); }
+/* light-bg override */
+.ey--light { color: var(--gold); }
+.ey--light::before { background: var(--gold); opacity: .7; }
+/* centered (contact) */
+.ey--c { justify-content: center; }
+.ey--c::before { display: none; }
+.ey--c::after {
+  content: ""; flex: none;
+  width: 28px; height: 1px; background: var(--gold-s); opacity: .5;
+}
+.ey--c.ey--light::after { background: var(--gold); opacity: .7; }
+
+/* ─── Typography scale ────────────────────────────────────── */
+h1, h2 {
+  font-family: var(--serif); font-weight: 400;
+  line-height: 1.04; letter-spacing: -.01em;
+}
+h3 { font-family: var(--serif); font-weight: 400; line-height: 1.1; }
+.sh { font-size: clamp(2.1rem, 4.6vw, 3.6rem); }
+.lead {
+  font-size: clamp(.95rem, 1.45vw, 1.12rem);
+  font-weight: 300; line-height: 1.74; max-width: 54ch;
+}
+
+/* ─── Section base ────────────────────────────────────────── */
+.sec { padding: clamp(88px, 13vh, 150px) 0; }
+.sec--light { background: var(--bone); color: var(--ink); }
+.sec--dark  { background: var(--ink);  color: var(--bone); }
+.sec--mid   { background: var(--ink-mid); color: var(--bone); }
+.sec-intro  { margin-bottom: clamp(52px, 8vh, 96px); }
+.ey         { margin-bottom: clamp(16px, 2.2vh, 24px); }
+.sec-intro .sh  { margin-bottom: clamp(18px, 2.5vh, 28px); }
+.ey--c      { margin-bottom: 0; }
+
+/* ─── Buttons ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--sans); font-size: 11.5px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 15px 28px; border-radius: 2px; border: 1px solid;
+  cursor: pointer; transition: all .45s var(--ease);
+}
+.btn .arr { display: inline-block; transition: transform .45s var(--ease); }
+.btn:hover .arr { transform: translateX(5px); }
+.btn-solid   { background: var(--bone); color: var(--ink); border-color: var(--bone); }
+.btn-solid:hover { background: var(--gold); border-color: var(--gold); }
+.btn-outline { background: transparent; color: var(--bone); border-color: rgba(244,241,234,.35); }
+.btn-outline:hover { border-color: var(--bone); }
+.btn-dark    { background: var(--ink); color: var(--bone); border-color: var(--ink); }
+.btn-dark:hover { background: var(--gold); border-color: var(--gold); color: var(--ink); }
+.btn-ghost {
+  display: inline-flex; align-items: center;
+  font-family: var(--sans); font-size: 13px; font-weight: 500; letter-spacing: .06em;
+  text-transform: uppercase; text-decoration: none; cursor: pointer;
+  color: var(--bone); padding: 17px 4px; position: relative;
+  transition: all .5s var(--ease);
+}
+.btn-ghost::after {
+  content: ""; position: absolute; left: 4px; bottom: 11px;
+  width: calc(100% - 8px); height: 1px;
+  background: var(--gold-s); transform: scaleX(1); transform-origin: left;
+  transition: transform .5s var(--ease);
+}
+.btn-ghost:hover::after { transform: scaleX(0); transform-origin: right; }
+
+/* ─── Navigation ──────────────────────────────────────────── */
+#nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 300;
+  transition: background .5s var(--ease), box-shadow .5s var(--ease);
+}
+#nav .ni {
+  height: var(--nav-h);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 var(--ph);
+  border-bottom: 1px solid transparent;
+  transition: border-color .5s var(--ease);
+}
+#nav.scrolled {
+  background: rgba(20,19,17,.9);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+}
+#nav.scrolled .ni { border-color: rgba(244,241,234,.07); }
+#nav.on-light {
+  background: rgba(244,241,234,.93);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 rgba(22,21,19,.1);
+}
+#nav.on-light .ni { border-color: transparent; }
+
+#nav-logo {
+  font-family: var(--serif); font-weight: 500;
+  font-size: 20px; letter-spacing: .44em;
+  text-transform: uppercase; padding-left: .44em;
+  color: var(--bone);
+  transition: color .4s var(--ease);
+}
+#nav.on-light #nav-logo { color: var(--ink); }
+
+.nav-links {
+  display: flex; align-items: center;
+  gap: 36px; list-style: none;
+}
+.nav-links a.nav-link {
+  font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(244,241,234,.5);
+  transition: color .35s var(--ease);
+}
+.nav-links a.nav-link:hover { color: var(--bone); }
+#nav.on-light .nav-links a.nav-link { color: rgba(20,19,17,.45); }
+#nav.on-light .nav-links a.nav-link:hover { color: var(--ink); }
+
+.nav-cta {
+  font-family: var(--sans); font-size: 11px; font-weight: 500;
+  letter-spacing: .1em; text-transform: uppercase;
+  padding: 11px 22px; border-radius: 2px;
+  background: var(--bone); color: var(--ink);
+  border: 1px solid var(--bone);
+  cursor: pointer;
+  transition: all .4s var(--ease);
+}
+.nav-cta:hover { background: var(--gold); border-color: var(--gold); }
+#nav.on-light .nav-cta { background: transparent; border-color: var(--ink); color: var(--ink); }
+#nav.on-light .nav-cta:hover { background: var(--ink); border-color: var(--ink); color: var(--bone); }
+
+.burger {
+  display: none; flex-direction: column; gap: 5.5px;
+  background: none; border: none; cursor: pointer;
+  padding: 6px; z-index: 310;
+}
+.burger span {
+  display: block; width: 24px; height: 1.5px;
+  background: var(--bone); transition: all .4s var(--ease);
+}
+#nav.on-light .burger span { background: var(--ink); }
+.burger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.burger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+#nav-overlay {
+  position: fixed; inset: 0; z-index: 299;
+  background: rgba(8,8,7,.6); backdrop-filter: blur(2px);
+  opacity: 0; pointer-events: none;
+  transition: opacity .45s var(--ease);
+}
+#nav-overlay.open { opacity: 1; pointer-events: auto; }
+
+/* ─── Hero ────────────────────────────────────────────────── */
+#hero {
+  min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  background: var(--ink); position: relative; overflow: hidden;
+  padding: var(--nav-h) var(--ph) clamp(72px, 13vh, 130px);
+}
+#hero::before {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 50% at 100% 0%, rgba(168,136,78,.05) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 60% at 0% 100%, rgba(168,136,78,.03) 0%, transparent 70%);
+}
+
+.h-eyebrow {
+  font-size: 10.5px; font-weight: 500;
+  letter-spacing: .3em; text-transform: uppercase;
+  color: var(--gold-s);
+  margin-bottom: clamp(20px, 3vh, 34px);
+  opacity: 0; transform: translateY(14px);
+  animation: fuUp .9s var(--ease) .2s forwards;
+}
+.h-h1 {
+  font-family: var(--serif); font-weight: 300;
+  font-size: clamp(4.2rem, 11.5vw, 11rem);
+  line-height: .92; letter-spacing: -.03em;
+  color: var(--bone); max-width: 15ch;
+  margin-bottom: clamp(26px, 4vh, 44px);
+  will-change: transform, opacity;
+}
+.h-h1 em { font-style: italic; color: var(--gold-s); }
+/* line-by-line entrance */
+.h-l { display: block; overflow: hidden; padding-bottom: .04em; }
+.h-l span { display: block; transform: translateY(108%); animation: luUp .98s var(--ease) forwards; }
+.h-l:nth-child(1) span { animation-delay: .08s; }
+.h-l:nth-child(2) span { animation-delay: .2s; }
+.h-l:nth-child(3) span { animation-delay: .32s; }
+
+.h-sub {
+  font-size: clamp(.95rem, 1.45vw, 1.1rem); font-weight: 300;
+  line-height: 1.74; max-width: 46ch;
+  color: rgba(244,241,234,.60);
+  margin-bottom: clamp(34px, 5.5vh, 54px);
+  opacity: 0; transform: translateY(14px);
+  animation: fuUp .9s var(--ease) .52s forwards;
+}
+.h-ctas {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  opacity: 0; transform: translateY(14px);
+  animation: fuUp .9s var(--ease) .68s forwards;
+}
+
+@keyframes luUp { to { transform: none; } }
+@keyframes fuUp { to { opacity: 1; transform: none; } }
+
+/* ─── Reveal / split-text ─────────────────────────────────── */
+.r {
+  opacity: 0; transform: translateY(42px);
+  transition: opacity 1s var(--ease), transform 1s var(--ease);
+}
+.r.in { opacity: 1; transform: none; }
+.r.d1 { transition-delay: .1s; }
+.r.d2 { transition-delay: .22s; }
+.r.d3 { transition-delay: .36s; }
+.r.d4 { transition-delay: .5s; }
+
+.st .sl  { display: block; overflow: hidden; padding-bottom: .05em; }
+.st .sl-i { display: block; transform: translateY(104%); transition: transform .9s var(--ease); }
+.st .sl:nth-child(2) .sl-i { transition-delay: .1s; }
+.st .sl:nth-child(3) .sl-i { transition-delay: .2s; }
+.st .sl:nth-child(4) .sl-i { transition-delay: .3s; }
+.st.in .sl-i { transform: none; }
+
+/* ─── Problem ─────────────────────────────────────────────── */
+#problem h2 { font-size: clamp(2.1rem, 4.6vw, 3.6rem); margin: 0 0 24px; }
+#problem .sec-intro { max-width: 62ch; }
+
+.comp-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border: 1px solid rgba(22,21,19,.12);
+  margin-top: clamp(52px, 8vh, 96px);
+}
+.comp-col { padding: 48px 44px; }
+.comp-col:first-child { border-right: 1px solid rgba(22,21,19,.12); background: rgba(22,21,19,.015); }
+.comp-col.c-styx {
+  background: var(--ink); color: var(--bone);
+}
+.comp-ttl {
+  display: block; font-size: 11px; letter-spacing: .22em;
+  text-transform: uppercase; font-weight: 500;
+  margin-bottom: 26px;
+}
+.comp-col:first-child .comp-ttl { color: var(--muted); }
+.comp-col.c-styx .comp-ttl { color: var(--gold-s); }
+.comp-h {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.18;
+  margin-bottom: 28px;
+}
+.comp-col.c-styx  .comp-h { color: var(--bone); }
+
+.clist { list-style: none; }
+.clist li {
+  position: relative; padding: 13px 0 13px 26px;
+  font-size: 1.02rem; font-weight: 300; line-height: 1.55;
+  border-top: 1px solid rgba(22,21,19,.09);
+}
+.comp-col.c-styx .clist li { border-color: rgba(244,241,234,.09); color: rgba(244,241,234,.76); }
+.clist li:first-child { border-top: none; }
+.clist li::before { position: absolute; left: 0; top: 12px; font-size: .87rem; }
+.clist.neg li::before { content: "×"; color: var(--muted); }
+.clist.pos li::before { content: "—"; color: var(--gold-s); }
+
+/* ─── Before / After ──────────────────────────────────────── */
+.ba-intro { padding-bottom: clamp(36px, 5vh, 60px); }
+.ba-wrap {
+  position: relative; width: 100%;
+  aspect-ratio: 16 / 7; min-height: 300px;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none; -webkit-user-select: none;
+}
+.ba-pane {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: clamp(18px, 2.5vw, 32px) clamp(24px, 3.5vw, 46px);
+}
+.ba-before { background: #231A0F; }
+.ba-after  { background: #0D0D0C; clip-path: inset(0 0 0 50%); }
+.ba-pane img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ba-ph {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 10px; text-align: center; padding: 24px;
+}
+.ba-ph-lbl {
+  font-size: 9px; letter-spacing: .28em; text-transform: uppercase; font-weight: 500;
+}
+.ba-before .ba-ph-lbl { color: rgba(244,241,234,.16); }
+.ba-after  .ba-ph-lbl { color: var(--gold-s); }
+.ba-ph-note {
+  font-family: var(--serif); font-style: italic;
+  font-size: .93rem; line-height: 1.45; max-width: 30ch;
+}
+.ba-before .ba-ph-note { color: rgba(244,241,234,.18); }
+.ba-after  .ba-ph-note { color: rgba(244,241,234,.38); }
+.ba-cap {
+  position: relative; z-index: 2;
+  font-size: 9.5px; letter-spacing: .24em; text-transform: uppercase; font-weight: 500;
+}
+.ba-before .ba-cap { color: rgba(244,241,234,.28); }
+.ba-after  .ba-cap { color: var(--gold-s); }
+.ba-line {
+  position: absolute; top: 0; bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1px; background: rgba(244,241,234,.55);
+  z-index: 10; pointer-events: none;
+}
+.ba-knob {
+  position: absolute; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(14,13,11,.82); border: 1px solid rgba(244,241,234,.4);
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 11; animation: kPulse 3s ease-in-out infinite;
+}
+@keyframes kPulse {
+  0%,100% { box-shadow: 0 0 0 0 rgba(168,136,78,.2); }
+  50%      { box-shadow: 0 0 0 10px rgba(168,136,78,0); }
+}
+
+/* ─── Finishes carousel ───────────────────────────────────── */
+.fin-head { padding-bottom: clamp(36px, 5vh, 60px); }
+.fin-outer { overflow: hidden; cursor: grab; }
+.fin-outer:active { cursor: grabbing; }
+.fin-track {
+  display: flex; gap: clamp(12px, 1.4vw, 18px);
+  padding: 0 var(--ph);
+  will-change: transform;
+}
+.fc {
+  flex: none;
+  width: clamp(268px, 28vw, 390px);
+  height: clamp(420px, 55vh, 530px);
+  background: #18160F;
+  border: 1px solid rgba(244,241,234,.07);
+  display: flex; flex-direction: column; overflow: hidden;
+}
+.fc-img {
+  flex: none; height: 52%;
+  background: linear-gradient(155deg, #252017, #171510);
+  border-bottom: 1px solid rgba(244,241,234,.05);
+  position: relative;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 8px; padding: 24px; text-align: center;
+}
+.fc-num {
+  position: absolute; top: 14px; left: 16px;
+  font-size: 9px; letter-spacing: .2em; text-transform: uppercase;
+  color: rgba(244,241,234,.18);
+}
+.fc-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.fc-img-tag { font-size: 9px; letter-spacing: .24em; text-transform: uppercase; color: var(--gold-s); font-weight: 500; }
+.fc-img-note { font-family: var(--serif); font-style: italic; font-size: .88rem; color: rgba(244,241,234,.27); line-height: 1.42; max-width: 24ch; }
+.fc-body { flex: 1; padding: clamp(16px, 2vw, 24px); display: flex; flex-direction: column; }
+.fc-idx  { font-size: 9.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--gold-s); font-weight: 500; }
+.fc-name { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.1vw, 1.85rem); color: var(--bone); line-height: .98; margin-top: 10px; }
+.fc-desc { font-size: .83rem; color: rgba(244,241,234,.4); font-weight: 300; line-height: 1.7; margin-top: auto; padding-top: 14px; }
+
+.fin-bar {
+  display: flex; align-items: center; gap: 18px;
+  padding: 20px var(--ph) clamp(88px, 13vh, 150px);
+}
+.fin-count { font-size: 11px; letter-spacing: .1em; color: rgba(244,241,234,.28); min-width: 44px; font-variant-numeric: tabular-nums; }
+#fin-n { color: rgba(244,241,234,.72); font-weight: 500; }
+.fin-prog { flex: 1; height: 1px; background: rgba(244,241,234,.1); position: relative; overflow: hidden; }
+.fin-fill { position: absolute; left: 0; top: 0; height: 100%; width: 0; background: var(--gold); }
+.fin-link {
+  font-size: 11px; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--gold-s); white-space: nowrap;
+  transition: color .35s var(--ease);
+}
+.fin-link:hover { color: var(--bone); }
+
+/* ─── Process (light section) ────────────────────────────── */
+.proc-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 0; margin-top: 66px;
+}
+.proc-step {
+  padding: 34px 28px 34px 0;
+  border-top: 1px solid rgba(22,21,19,.12);
+  position: relative;
+}
+.proc-n {
+  display: block;
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  color: var(--gold); line-height: 1;
+  margin-bottom: 20px;
+}
+.proc-step h3 { font-size: 1.3rem; color: var(--ink); margin-bottom: 12px; }
+.proc-step p  { font-size: .95rem; color: rgba(22,21,19,.6); line-height: 1.66; font-weight: 300; }
+
+.guar {
+  margin-top: clamp(52px, 8vh, 96px);
+  border: 1px solid rgba(22,21,19,.12);
+  background: rgba(22,21,19,.03);
+  padding: clamp(32px, 5vh, 56px) clamp(32px, 5.5vw, 68px);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 36px; flex-wrap: wrap;
+}
+.guar-q {
+  font-family: var(--serif); font-style: italic;
+  font-size: clamp(1.15rem, 1.8vw, 1.55rem);
+  color: var(--ink); line-height: 1.28; max-width: 38ch;
+}
+.guar-s { font-size: .88rem; color: var(--muted); font-weight: 300; max-width: 34ch; line-height: 1.68; }
+
+/* ─── Contact ─────────────────────────────────────────────── */
+.ct-head { text-align: center; max-width: 700px; margin: 0 auto clamp(56px, 8vh, 96px); }
+.ct-h2 {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 7vw, 6.8rem);
+  line-height: .94; letter-spacing: -.025em;
+  color: var(--bone); margin-top: 22px;
+}
+.ct-h2 em { font-style: italic; color: var(--gold-s); }
+.ct-body {
+  color: rgba(244,241,234,.52); margin-top: 22px;
+  font-size: clamp(.93rem, 1.35vw, 1.05rem);
+  font-weight: 300; line-height: 1.76;
+  max-width: 46ch; margin-left: auto; margin-right: auto;
+}
+.ct-form-w { max-width: 640px; margin: 0 auto; }
+.ct-form { display: grid; grid-template-columns: 1fr 1fr; gap: 0 clamp(24px, 4vw, 56px); }
+.ct-f { padding-bottom: clamp(28px, 4vh, 44px); }
+.ct-f--full { grid-column: 1 / -1; }
+.ct-f label {
+  display: block; font-size: 9.5px; letter-spacing: .24em;
+  text-transform: uppercase; font-weight: 500;
+  color: rgba(244,241,234,.48); margin-bottom: 14px;
+}
+.ct-f input, .ct-f textarea {
+  width: 100%; background: transparent; border: none;
+  border-bottom: 1px solid rgba(244,241,234,.2);
+  padding: 0 0 12px;
+  font-family: var(--serif); font-size: clamp(1.1rem, 1.8vw, 1.45rem);
+  font-weight: 300; color: var(--bone); outline: none;
+  border-radius: 0; -webkit-appearance: none;
+  transition: border-color .4s var(--ease);
+}
+.ct-f textarea { resize: none; display: block; line-height: 1.55; }
+.ct-f input::placeholder,
+.ct-f textarea::placeholder {
+  font-family: var(--sans); font-size: .8rem;
+  font-style: italic; color: rgba(244,241,234,.26);
+}
+.ct-f input:focus,
+.ct-f textarea:focus { border-bottom-color: var(--gold); }
+.ct-submit {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 22px; flex-wrap: wrap; padding-top: 6px;
+}
+.ct-note { font-size: .77rem; color: rgba(244,241,234,.36); font-weight: 300; }
+
+/* ─── Footer ──────────────────────────────────────────────── */
+footer {
+  background: var(--ink); color: var(--bone);
+  padding: clamp(48px, 7vh, 80px) 0 clamp(28px, 4vh, 44px);
+  border-top: 1px solid rgba(244,241,234,.07);
+}
+.foot-row { display: flex; justify-content: space-between; align-items: flex-end; gap: 40px; flex-wrap: wrap; }
+.foot-logo { font-family: var(--serif); font-size: 24px; font-weight: 500; letter-spacing: .4em; text-transform: uppercase; padding-left: .4em; color: var(--bone); }
+.foot-tag  { font-family: var(--serif); font-style: italic; font-size: 1rem; color: rgba(244,241,234,.3); margin-top: 8px; }
+.foot-r    { text-align: right; font-size: 11.5px; color: rgba(244,241,234,.3); letter-spacing: .04em; line-height: 2.1; }
+.foot-r a  { color: rgba(244,241,234,.44); transition: color .3s; }
+.foot-r a:hover { color: var(--bone); }
+.foot-legal { margin-top: clamp(24px, 3.5vh, 40px); font-size: 10.5px; color: rgba(244,241,234,.22); letter-spacing: .06em; }
+
+/* ─── Responsive ──────────────────────────────────────────── */
+@media (max-width: 960px) {
+  .comp-grid { grid-template-columns: 1fr; }
+  .comp-col:first-child { border-right: none; border-bottom: 1px solid rgba(22,21,19,.1); }
+  .proc-grid { grid-template-columns: 1fr 1fr; }
+  .ct-form { grid-template-columns: 1fr; }
+  .ct-f--full { grid-column: auto; }
+}
+
+@media (max-width: 680px) {
+  .nav-links {
+    position: fixed; inset: 0 0 0 auto;
+    width: 80%; max-width: 300px;
+    background: var(--ink); flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    gap: 28px; padding: 0 36px;
+    transform: translateX(100%); transition: transform .55s var(--ease);
+    z-index: 305; list-style: none;
+  }
+  .nav-links.open { transform: none; }
+  .nav-links a.nav-link { font-size: 13px; color: rgba(244,241,234,.68); }
+  .nav-cta { background: transparent; border-color: var(--bone); color: var(--bone); }
+  .burger  { display: flex; }
+  .proc-grid { grid-template-columns: 1fr; }
+  .comp-col { padding: 38px 28px; }
+  .guar { flex-direction: column; }
+  .foot-row { flex-direction: column; align-items: flex-start; }
+  .foot-r   { text-align: left; }
+  .fc { width: 80vw; }
+  .ba-wrap { aspect-ratio: 4 / 3; }
+  .sec { padding: clamp(60px, 10vh, 100px) 0; }
+}
+
+@media (max-width: 420px) {
+  :root { --ph: 20px; }
+  .h-h1 { font-size: clamp(3rem, 13vw, 4.5rem); }
+  .sh   { font-size: clamp(1.8rem, 8vw, 2.4rem); }
+  .ct-h2 { font-size: clamp(2.4rem, 10vw, 3.5rem); }
+}
+
+/* ─── Gold sweep left → right ─────────────────────────────── */
+@property --gp {
+  syntax: '<percentage>';
+  initial-value: -12%;
+  inherits: false;
+}
+.shimmer-word {
+  background: linear-gradient(
+    to right,
+    var(--gold-s)           var(--gp),
+    rgba(255,248,215,1)     calc(var(--gp) + 4%),
+    rgba(244,241,234,.60)   calc(var(--gp) + 10%)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation:
+    turnGoldLTR 1.5s ease-in-out 2s both,
+    endGlint    1.6s ease-out   3.3s both;
+}
+@keyframes turnGoldLTR {
+  to { --gp: 100%; }
+}
+@keyframes endGlint {
+  0%   { filter: brightness(1); }
+  10%  { filter: brightness(2.4); }
+  100% { filter: brightness(1); }
+}
+
+/* ─── Before/After — pin Styx label to visible right side ─── */
+.ba-after .ba-cap {
+  position: absolute;
+  bottom: clamp(18px, 2.5vw, 32px);
+  right: clamp(24px, 3.5vw, 46px);
+  left: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .r, .st .sl-i { transition: none !important; opacity: 1 !important; transform: none !important; }
+  .h-eyebrow, .h-sub, .h-ctas, .h-l span { animation: none !important; opacity: 1 !important; transform: none !important; }
+  .ba-knob { animation: none; }
+  .shimmer-word { animation: none !important; --gp: 100%; }
+}
+
+</style>
+</head>
+<body>
+
+<div id="nav-overlay"></div>
+
+<!-- ══════ NAV ══════════════════════════════════════════════ -->
+<nav id="nav">
+  <div class="ni">
+    <a href="#top" id="nav-logo">Styx</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#problem" class="nav-link">The Problem</a></li>
+      <li><a href="#finishes" class="nav-link">Finishes</a></li>
+      <li><a href="#process" class="nav-link">Process</a></li>
+      <li><a href="#contact" class="nav-cta">Start a Project</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div id="top"></div>
+
+<!-- ══════ HERO ══════════════════════════════════════════════ -->
+<section id="hero" data-theme="dark">
+  <p class="h-eyebrow">Premium Paper Packaging</p>
+  <h1 class="h-h1">
+    <span class="h-l"><span>The bag <em>worth</em></span></span>
+    <span class="h-l"><span>keeping.</span></span>
+  </h1>
+  <p class="h-sub">The bag is the last thing your customer touches, and the first thing they judge. Most small brands hand their work over in thin brown kraft with twisted-paper handles. We make the kind of bag <span class="shimmer-word">people keep</span>.</p>
+  <div class="h-ctas">
+    <a href="#contact" class="btn btn-solid">Start a Project <span class="arr">→</span></a>
+    <a href="#contrast" class="btn-ghost">See the difference</a>
+  </div>
+</section>
+
+<!-- ══════ PROBLEM ══════════════════════════════════════════ -->
+<section id="problem" data-theme="light" class="sec sec--light">
+  <div class="wrap">
+    <div class="sec-intro">
+      <span class="ey ey--light r">The Problem</span>
+      <h2 class="r d1">A cheap bag undoes an expensive impression.</h2>
+      <p class="lead r d2">You've invested in your space, your branding, your service. Then the moment your customer leaves, all of it is carried out in packaging that quietly says <em>average</em>. The handle digs in. The bag creases on the walk home. It's in the bin before they get there, and so is the impression you worked to build.</p>
+    </div>
+
+    <div class="comp-grid r">
+      <div class="comp-col">
+        <span class="comp-ttl">The brown-bag default</span>
+        <h3 class="comp-h">What most small brands settle for</h3>
+        <ul class="clist neg">
+          <li>Thin kraft that creases and tears</li>
+          <li>Twisted-paper handles that cut into the hand</li>
+          <li>One finish, one colour, no point of difference</li>
+          <li>Expensive per-unit on the small runs you actually need</li>
+          <li>Forgettable, indistinguishable from every other shop</li>
+        </ul>
+      </div>
+      <div class="comp-col c-styx">
+        <span class="comp-ttl">The Styx standard</span>
+        <h3 class="comp-h">What your brand deserves<br>to be carried in</h3>
+        <ul class="clist pos">
+          <li>Heavyweight, structured stock that holds its shape</li>
+          <li>Cotton-rope, ribbon or die-cut handles, finished by hand</li>
+          <li>Foil, emboss, spot UV and soft-touch, specified to your brand</li>
+          <li>Accessible runs without the supplier minimums</li>
+          <li>A bag the customer keeps, reuses, and remembers you by</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ BEFORE / AFTER ════════════════════════════════════ -->
+<section id="contrast" data-theme="dark" class="sec sec--dark" style="border-top:1px solid rgba(244,241,234,.08)">
+  <div class="wrap ba-intro">
+    <span class="ey r">The Difference, Made Visible</span>
+    <h2 class="sh st r d1" id="baH2">One brief.<br>Two outcomes.</h2>
+    <p class="lead r d2" style="color:rgba(244,241,234,.44);margin-top:18px">The same product. Two different bags. Drag to compare.</p>
+  </div>
+
+  <div class="ba-wrap" id="baWrap">
+    <div class="ba-pane ba-before">
+      <img src="styx-assets/cheap%20bag2.png" alt="Plain kraft paper bag with twisted handles">
+      <span class="ba-cap">The forgettable alternative</span>
+    </div>
+    <div class="ba-pane ba-after" id="baAfter">
+      <img src="styx-assets/ChatGPT%20Image%20Jun%2030%2C%202026%2C%2007_37_44%20PM.png" alt="Premium Styx navy bag with silver foil and cotton rope handles">
+      <span class="ba-cap">Styx</span>
+    </div>
+    <div class="ba-line" id="baLine"></div>
+    <div class="ba-knob" id="baKnob">
+      <svg width="20" height="10" viewBox="0 0 20 10" fill="none">
+        <path d="M6 1.5 2.5 5 6 8.5" stroke="rgba(244,241,234,.68)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M14 1.5 17.5 5 14 8.5" stroke="rgba(244,241,234,.68)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ FINISHES ══════════════════════════════════════════ -->
+<div id="finishes" data-theme="dark" class="sec--mid" style="padding-top:clamp(88px,13vh,150px)">
+  <div class="wrap fin-head">
+    <span class="ey r">Finishes &amp; Technique</span>
+    <h2 class="sh st r d1" id="finH2">Supplier-grade finishes,<br>without the complexity.</h2>
+    <p class="lead r d2" style="color:rgba(244,241,234,.44);margin-top:18px;max-width:50ch">These are the techniques that separate luxury packaging from generic print-on-demand. We bring them to quantities your size, and guide you through every decision.</p>
+  </div>
+
+  <div class="fin-outer" id="finOuter">
+    <div class="fin-track" id="finTrack">
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/ChatGPT%20Image%20Jun%2030%2C%202026%2C%2006_17_30%20PM.png" alt="Hot foil stamped logo macro on dark stock" style="object-fit: cover; object-position: center 28%;">
+          <span class="fc-num">01 · Hot Foil</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">01 / Finish</span>
+          <h3 class="fc-name">Hot Foil<br>Stamping</h3>
+          <p class="fc-desc">Mirror-bright metallic in gold, silver, copper or holographic. The finish that reads luxury before a single word is read.</p>
+        </div>
+      </div>
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/soft%20touch.png" alt="Soft-touch laminated bag with foil logo detail">
+          <span class="fc-num">02 · Soft-Touch</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">02 / Finish</span>
+          <h3 class="fc-name">Soft-Touch<br>Lamination</h3>
+          <p class="fc-desc">A velvet, suede-like surface that turns the moment of unboxing into something people describe to other people.</p>
+        </div>
+      </div>
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/ChatGPT%20Image%20Jun%2030%2C%202026%2C%2005_59_04%20PM.png" alt="Embossed and debossed brand mark macro comparison">
+          <span class="fc-num">03 · Deboss</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">03 / Finish</span>
+          <h3 class="fc-name">Emboss &amp;<br>Debossing</h3>
+          <p class="fc-desc">Pressed into the stock. Tactile branding you feel before you see. The mark of a brand that understands restraint is a luxury.</p>
+        </div>
+      </div>
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/spotuv.png" alt="Spot UV varnish macro on paper stock" style="object-fit: cover; object-position: center center;">
+          <span class="fc-num">04 · Spot UV</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">04 / Finish</span>
+          <h3 class="fc-name">Spot UV<br>Varnish</h3>
+          <p class="fc-desc">Gloss against matte. Your logo materialising only in certain light: there, then gone. Quietly extraordinary.</p>
+        </div>
+      </div>
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/ChatGPT%20Image%20Jun%2030%2C%202026%2C%2007_38_11%20PM.png" alt="Cotton rope and satin ribbon handle macro detail comparison">
+          <span class="fc-num">05 · Handles</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">05 / Detail</span>
+          <h3 class="fc-name">Cotton Rope<br>&amp; Ribbon</h3>
+          <p class="fc-desc">Never the standard twisted paper. Cotton rope or grosgrain ribbon, finished by hand. The first detail noticed.</p>
+        </div>
+      </div>
+
+      <div class="fc">
+        <div class="fc-img">
+          <img src="styx-assets/istockphoto-635923956-612x612.jpg" alt="Texture embossed paper surface detail">
+          <span class="fc-num">06 · Texture</span>
+        </div>
+        <div class="fc-body">
+          <span class="fc-idx">06 / Finish</span>
+          <h3 class="fc-name">Texture<br>Embossing</h3>
+          <p class="fc-desc">An all-over pattern pressed into the surface of the bag. Linen, pebble, leather grain. Tactile before it is seen, and unmistakable in the hand.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="fin-bar">
+    <span class="fin-count"><span id="fin-n">01</span><span style="color:rgba(244,241,234,.22)"> / 06</span></span>
+    <div class="fin-prog"><div class="fin-fill" id="fin-fill"></div></div>
+    <a href="#contact" class="fin-link">Start a project →</a>
+  </div>
+</div>
+
+<!-- ══════ PROCESS ══════════════════════════════════════════ -->
+<section id="process" data-theme="light" class="sec sec--light" style="border-top:1px solid rgba(22,21,19,.1)">
+  <div class="wrap">
+    <div class="sec-intro">
+      <span class="ey ey--light r">How It Works</span>
+      <h2 class="sh st r d1" id="procH2">Direct-supplier quality.<br>None of the back-and-forth.</h2>
+      <p class="lead r d2" style="color:rgba(22,21,19,.6)">Going direct to a manufacturer means minimums, language barriers, endless sample rounds and the real risk of a bad run. We sit in that gap for you, and take all of it off your plate.</p>
+    </div>
+
+    <div class="proc-grid">
+      <div class="proc-step r d1">
+        <span class="proc-n">01</span>
+        <h3>Tell us your brand</h3>
+        <p>Share your logo, colours and where the bag is used. No brief required; we'll draw it out of you in one conversation.</p>
+      </div>
+      <div class="proc-step r d2">
+        <span class="proc-n">02</span>
+        <h3>We design &amp; spec</h3>
+        <p>We recommend the stock, size, handle and finishes that suit your brand and budget, and tell you honestly where to save.</p>
+      </div>
+      <div class="proc-step r d3">
+        <span class="proc-n">03</span>
+        <h3>Approval &amp; Confirmation</h3>
+        <p>You sign off on a precise digital proof and material spec before a single bag is made. No physical guessing, no surprises.</p>
+      </div>
+      <div class="proc-step r d4">
+        <span class="proc-n">04</span>
+        <h3>Produced &amp; delivered</h3>
+        <p>We manage the production we've already vetted, quality-check the run, and deliver to your door.</p>
+      </div>
+    </div>
+
+    <div class="guar r">
+      <blockquote class="guar-q">&ldquo;A premium product, guaranteed. Or we make it right.&rdquo;</blockquote>
+      <span class="guar-s">We don't ship a run we wouldn't put our own name on. If it isn't right, it isn't your problem to solve.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════ CONTACT ══════════════════════════════════════════ -->
+<section id="contact" data-theme="dark" class="sec sec--dark">
+  <div class="wrap">
+
+    <div class="ct-head r">
+      <span class="ey ey--c">Start a Conversation</span>
+      <h2 class="ct-h2 st" id="ctaH2">Tell us what<br>you're <em>making.</em></h2>
+      <p class="ct-body">We'll come back with a considered recommendation and a clear price, usually within one working day. A short note is enough to begin.</p>
+    </div>
+
+    <div class="ct-form-w r d1">
+      <!-- Replace XXXXXXXX with your Formspree form ID -->
+      <form action="https://formspree.io/f/XXXXXXXX" method="POST" class="ct-form">
+        <div class="ct-f">
+          <label for="fn">Name</label>
+          <input id="fn" type="text" name="name" placeholder="Your name" required />
+        </div>
+        <div class="ct-f">
+          <label for="fb">Business</label>
+          <input id="fb" type="text" name="business" placeholder="The Boutique / Practice" required />
+        </div>
+        <div class="ct-f ct-f--full">
+          <label for="fq">What are you looking for</label>
+          <textarea id="fq" name="enquiry" rows="3" placeholder="e.g. A luxury paper bag for our dental practice, gold foil logo, around 500 units." required></textarea>
+        </div>
+        <div class="ct-f">
+          <label for="fe">Email</label>
+          <input id="fe" type="email" name="email" placeholder="you@brand.com" required />
+        </div>
+        <div class="ct-submit">
+          <button type="submit" class="btn btn-solid">Send enquiry <span class="arr">→</span></button>
+          <span class="ct-note">No obligation. One working day turnaround.</span>
+        </div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════ FOOTER ════════════════════════════════════════════ -->
+<footer data-theme="dark">
+  <div class="wrap">
+    <div class="foot-row">
+      <div>
+        <div class="foot-logo">Styx</div>
+        <div class="foot-tag">Packaging worth keeping.</div>
+      </div>
+      <div class="foot-r">
+        <a href="mailto:hello@styxpackaging.com.au">hello@styxpackaging.com.au</a><br>
+        Premium paper packaging<br>
+        Australia
+      </div>
+    </div>
+    <div class="foot-legal">© <span id="yr"></span> Styx Packaging℠. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+'use strict';
+
+/* ── Utils ─────────────────────────────────────────────── */
+function lerp(a, b, t) { return a + (b - a) * t; }
+function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+document.getElementById('yr').textContent = new Date().getFullYear();
+
+/* ── Mobile nav ────────────────────────────────────────── */
+const burger   = document.getElementById('burger');
+const navLinks = document.getElementById('navLinks');
+const overlay  = document.getElementById('nav-overlay');
+
+function closeNav() {
+  navLinks.classList.remove('open');
+  burger.classList.remove('open');
+  burger.setAttribute('aria-expanded', 'false');
+  overlay.classList.remove('open');
+}
+burger.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  burger.classList.toggle('open', open);
+  burger.setAttribute('aria-expanded', String(open));
+  overlay.classList.toggle('open', open);
+});
+overlay.addEventListener('click', closeNav);
+navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', closeNav));
+
+/* ── Nav theme switching ────────────────────────────────── */
+const nav = document.getElementById('nav');
+
+function updateNav() {
+  const nh = nav.offsetHeight + 1;
+  let theme = 'dark';
+  document.querySelectorAll('[data-theme]').forEach(s => {
+    const r = s.getBoundingClientRect();
+    if (r.top <= nh && r.bottom > nh) theme = s.dataset.theme;
+  });
+  nav.classList.toggle('scrolled', window.scrollY > 20);
+  nav.classList.toggle('on-light', theme === 'light');
+}
+updateNav();
+window.addEventListener('scroll', updateNav, { passive: true });
+
+/* ── Scroll reveal ──────────────────────────────────────── */
+const revealIO = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('in');
+      revealIO.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -5% 0px' });
+
+document.querySelectorAll('.r, .st').forEach(el => revealIO.observe(el));
+
+/* ── Split-text headings ────────────────────────────────── */
+function splitLines(el) {
+  const raw = el.innerHTML.replace(/<br\s*\/?>/gi, '\n');
+  const parts = raw.split('\n').filter(p => p.replace(/<[^>]+>/g, '').trim());
+  if (!parts.length) return;
+  el.innerHTML = parts.map(p =>
+    `<span class="sl"><span class="sl-i">${p.trim()}</span></span>`
+  ).join('');
+}
+
+function initSplits() {
+  ['baH2','finH2','procH2','ctaH2'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) splitLines(el);
+  });
+}
+(document.fonts ? document.fonts.ready : Promise.resolve()).then(initSplits);
+
+/* ── Hero parallax ──────────────────────────────────────── */
+const heroEl = document.getElementById('hero');
+const heroH1 = document.querySelector('.h-h1');
+
+window.addEventListener('scroll', () => {
+  if (!heroH1 || !heroEl) return;
+  const sy = window.scrollY;
+  const hh = heroEl.offsetHeight;
+  if (sy > hh) return;
+  const p = sy / hh;
+  heroH1.style.transform = `translateY(${sy * 0.12}px)`;
+  heroH1.style.opacity   = Math.max(0, 1 - p * 1.6).toFixed(3);
+}, { passive: true });
+
+/* ── Before / After slider ──────────────────────────────── */
+(function () {
+  var wrap  = document.getElementById('baWrap');
+  var after = document.getElementById('baAfter');
+  var line  = document.getElementById('baLine');
+  var knob  = document.getElementById('baKnob');
+  if (!wrap) return;
+
+  var pos = 72, tPos = 72, raf = null, drag = false;
+
+  function apply() {
+    var p = pos.toFixed(2) + '%';
+    after.style.clipPath = 'inset(0 0 0 ' + p + ')';
+    line.style.left = p;
+    knob.style.left = p;
+  }
+
+  function tick() {
+    pos = lerp(pos, tPos, 0.08);
+    apply();
+    if (Math.abs(pos - tPos) > 0.05) {
+      raf = requestAnimationFrame(tick);
+    } else {
+      pos = tPos; apply(); raf = null;
+    }
+  }
+
+  function move(cx) {
+    var r = wrap.getBoundingClientRect();
+    tPos = clamp((cx - r.left) / r.width * 100, 3, 97);
+    if (!raf) raf = requestAnimationFrame(tick);
+  }
+
+  apply();
+
+  wrap.addEventListener('mousedown',  e => { drag = true;  move(e.clientX); });
+  document.addEventListener('mousemove', e => { if (drag) move(e.clientX); });
+  document.addEventListener('mouseup',   () => { drag = false; });
+  wrap.addEventListener('touchstart', e => { drag = true;  move(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchmove', e => { if (drag) move(e.touches[0].clientX); }, { passive: true });
+  document.addEventListener('touchend',  () => { drag = false; });
+
+  /* intro: animate from 72% → 50% when section enters view */
+  var fired = false;
+  new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting && !fired) {
+      fired = true; tPos = 50;
+      if (!raf) raf = requestAnimationFrame(tick);
+    }
+  }, { threshold: 0.3 }).observe(wrap);
+})();
+
+/* ── Finishes carousel ──────────────────────────────────── */
+(function () {
+  var outer   = document.getElementById('finOuter');
+  var track   = document.getElementById('finTrack');
+  var fillEl  = document.getElementById('fin-fill');
+  var countEl = document.getElementById('fin-n');
+  if (!track) return;
+
+  var N = track.children.length;
+  /* clone cards for infinite loop */
+  Array.from(track.children).forEach(c => track.appendChild(c.cloneNode(true)));
+
+  var x = 0, xT = 0, vel = 0;
+  var drag = false, dx0 = 0, xT0 = 0, lastX = 0;
+  var tDir = null;
+  var SPEED = 0.5, LERP = 0.058;
+
+  function loopW() {
+    var c = track.children[0];
+    if (!c) return 1;
+    var g = parseFloat(getComputedStyle(track).gap) || 16;
+    return (c.offsetWidth + g) * N;
+  }
+
+  (function tick() {
+    requestAnimationFrame(tick);
+    if (!drag) {
+      xT += SPEED;
+      if (Math.abs(vel) > 0.1) { xT -= vel; vel *= 0.88; }
+    }
+    var lw = loopW();
+    if (lw > 0) {
+      while (xT >= lw) { xT -= lw; x -= lw; }
+      while (xT <  0)  { xT += lw; x += lw; }
+    }
+    x = lerp(x, xT, LERP);
+    track.style.transform = 'translateX(' + (-x).toFixed(2) + 'px)';
+    if (lw > 0) {
+      var p = (x % lw) / lw;
+      if (fillEl)  fillEl.style.width = (p * 100).toFixed(1) + '%';
+      if (countEl) { var n = Math.floor(p * N) + 1; countEl.textContent = n < 10 ? '0' + n : '' + n; }
+    }
+  })();
+
+  /* mouse drag */
+  outer.addEventListener('mousedown', e => {
+    drag = true; dx0 = e.clientX; xT0 = xT; lastX = e.clientX; vel = 0;
+    e.preventDefault();
+  });
+  document.addEventListener('mousemove', e => {
+    if (!drag) return;
+    vel = (lastX - e.clientX) * 0.5; lastX = e.clientX;
+    xT = xT0 + (dx0 - e.clientX);
+  });
+  document.addEventListener('mouseup', () => { drag = false; });
+
+  /* touch drag — detects horizontal vs vertical to avoid scroll hijack */
+  var tX0 = 0, tY0 = 0, txT0 = 0;
+  outer.addEventListener('touchstart', e => {
+    tX0 = e.touches[0].clientX; tY0 = e.touches[0].clientY;
+    txT0 = xT; tDir = null; vel = 0; lastX = tX0;
+  }, { passive: true });
+  outer.addEventListener('touchmove', e => {
+    var dx = e.touches[0].clientX - tX0;
+    var dy = e.touches[0].clientY - tY0;
+    if (!tDir) tDir = Math.abs(dx) > Math.abs(dy) ? 'h' : 'v';
+    if (tDir === 'h') {
+      e.preventDefault();
+      vel = (lastX - e.touches[0].clientX) * 0.35;
+      lastX = e.touches[0].clientX;
+      xT = txT0 - dx;
+    }
+  }, { passive: false });
+  outer.addEventListener('touchend', () => { tDir = null; });
+})();
+</script>
+</body>
+</html>
