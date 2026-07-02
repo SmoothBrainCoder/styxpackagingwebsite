@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://styxpackaging.com.au/sitemap.xml
